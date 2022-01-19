@@ -10,3 +10,7 @@
 body {
   @apply bg-black;
 }
+
+.link-hover {
+  @apply relative after:content-[''] after:bg-white after:h-[.1rem] after:absolute after:w-full after:hidden hover:after:block transition-all;
+}

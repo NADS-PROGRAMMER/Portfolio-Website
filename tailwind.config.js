@@ -7,6 +7,8 @@ module.exports = {
 
       colors: {
         'portfolio-primary': '#444CF7',
+        'portfolio-secondary': '#4596F9',
+        'portfolio-tertiary': '#0657BA',
         'portfolio-bg': '#F3F3F3'
       }
     },

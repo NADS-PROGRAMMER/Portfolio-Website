@@ -15,9 +15,24 @@ body {
 }
 
 .link-hover {
-  @apply relative after:content-[''] after:bg-white after:h-[.1rem] after:absolute after:w-full after:hidden hover:after:block transition-all;
+  @apply relative after:content-[''] after:bg-portfolio-tertiary after:h-[.1rem] after:absolute after:w-full after:hidden hover:after:block transition-all;
 }
 
 .social path {
-  @apply fill-portfolio-primary;
+  @apply fill-portfolio-secondary;
+}
+
+.social:hover path {
+  @apply fill-portfolio-tertiary;
+}
+
+.wave {
+  @apply absolute bottom-0 object-fill;
+}
+.wave path {
+  @apply absolute h-[2rem];
+}
+
+.nav-links {
+  @apply font-[Poppins] text-portfolio-secondary hover:text-portfolio-tertiary;
 }

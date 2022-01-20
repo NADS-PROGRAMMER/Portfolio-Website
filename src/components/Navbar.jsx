@@ -9,10 +9,10 @@ function Navbar() {
     const matches = useMediaQuery('(min-width:768px)');
 
     const NavLinks = [
-        {link: <NavLink className="font-[Poppins] text-portfolio-primary" routePath="/" text="Home"/>},
-        {link: <NavLink className="font-[Poppins] text-portfolio-primary" routePath="/" text="About"/>},
-        {link: <NavLink className="font-[Poppins] text-portfolio-primary" routePath="/" text="Projects"/>},
-        {link: <NavLink className="font-[Poppins] text-portfolio-primary" routePath="/" text="Blogs"/>},
+        {link: <NavLink className="nav-links link-hover" routePath="/" text="Home"/>},
+        {link: <NavLink className="nav-links link-hover" routePath="/" text="About"/>},
+        {link: <NavLink className="nav-links link-hover" routePath="/" text="Projects"/>},
+        {link: <NavLink className="nav-links link-hover" routePath="/" text="Blogs"/>},
     ]
 
     // lg:p-[2rem_13.25rem]
@@ -21,7 +21,7 @@ function Navbar() {
           
           { matches && 
           <Button
-            color="primary"
+            color="secondary"
             variant="contained">
               Contact Me
           </Button> }
@@ -36,7 +36,8 @@ function Navbar() {
               }
           </ul>
 
-         <Socials className="hidden md:flex gap-[1rem]"/>
+         <span className="text-portfolio-secondary text-xl">Nads Marcelo</span>
+         {/* <Socials className="hidden md:flex gap-[1rem]"/> */}
 
         <svg className="md:hidden social block h-[2rem] w-[2rem] ml-auto">
               <MenuIcon  text="primary"/>

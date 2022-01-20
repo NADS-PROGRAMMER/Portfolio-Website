@@ -2,15 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+}
+
 * {
   @apply text-white;
   font-family: "Bebas Neue";
 }
 
 body {
-  @apply bg-black;
+  @apply bg-portfolio-bg;
 }
 
 .link-hover {
   @apply relative after:content-[''] after:bg-white after:h-[.1rem] after:absolute after:w-full after:hidden hover:after:block transition-all;
+}
+
+.social path {
+  @apply fill-portfolio-primary;
 }

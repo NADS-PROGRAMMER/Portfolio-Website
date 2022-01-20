@@ -1,19 +1,32 @@
-import React from 'react'
-import SvgIcon from '@mui/material/SvgIcon';
+import React, {useEffect, useState} from 'react'
 import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
-import { ReactComponent as Quote } from '../assets/logos/DontGiveUp.svg'
-import { ReactComponent as NameLogo } from '../assets/logos/NameLogo.svg'
-import { ReactComponent as GithubLogo } from '../assets/socials/github.svg'
-import { ReactComponent as TwitterLogo } from '../assets/socials/twitter.svg'
-import { ReactComponent as LinkedInLogo } from '../assets/socials/linkedin.svg'
 import useMediaQuery from '@mui/material/useMediaQuery';
+import {ReactComponent as MainLogo} from '../assets/logos/MainLogo.svg'
+import Socials from '../components/Socials'
 
 function Home() {
+    const matches = useMediaQuery('(min-width:768px)');
+    
 
     return (
-       <main>
+       <main className="min-h-screen flex flex-col justify-center items-center p-[4.5rem_0rem] gap-[1rem]">
 
+           <section className="w-full md:w-max h-max flex flex-col items-center justify-center">
+                <MainLogo className="w-full max-w-[36rem] 2xl:max-w-[46rem] h-max"/>
+           </section>
+
+            { !matches && <Button
+            sx={{
+                bgcolor: '#444CF7',
+                '&:hover': {
+                    backgroundColor: '#5760fd'
+                }
+            }}
+            variant="contained">
+              Contact Me
+          </Button> }
+
+          <Socials className="md:hidden flex gap-[2rem]"/>
        </main>
     )
 }

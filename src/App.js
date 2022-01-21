@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar'
 import Home from './Pages/Home'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Routes, Route } from 'react-router-dom'
 
 const myTheme = createTheme({
   palette: {
@@ -19,7 +20,11 @@ function App() {
     <ThemeProvider theme={myTheme}>
       <div className="flex flex-col">
         <Navbar />
-        <Home />
+        <Routes>
+          <Route path="/" element={<Home />}> 
+            <Route path="about" />
+          </Route>
+        </Routes>
       </div>
     </ThemeProvider>
     

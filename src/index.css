@@ -18,6 +18,10 @@ body {
   @apply fill-portfolio-secondary;
 }
 
+.svg-secondary path {
+  @apply fill-portfolio-tertiary;
+}
+
 .social path {
   @apply fill-portfolio-secondary;
 }

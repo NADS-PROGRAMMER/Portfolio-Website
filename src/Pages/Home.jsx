@@ -76,7 +76,7 @@ function Home() {
             </motion.section>
 
            <section className="w-full h-max flex flex-col items-center justify-center md:w-max">
-                <MainLogo className="h-max w-full max-w-[26rem] 2xl:max-w-[36rem]"/>
+                <MainLogo className="img-main"/>
            </section>
        </main>
     )

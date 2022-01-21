@@ -1,7 +1,11 @@
 import Navbar from './components/Navbar'
-import Home from './Pages/Home'
+
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Routes, Route } from 'react-router-dom'
+import {BrowserRouter, Routes, Route } from 'react-router-dom'
+
+// Pages
+import Home from './Pages/Home'
+import About from './Pages/About'
 
 const myTheme = createTheme({
   palette: {
@@ -21,9 +25,8 @@ function App() {
       <div className="flex flex-col">
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />}> 
-            <Route path="about" />
-          </Route>
+          <Route path="/" element={<Home />} /> 
+          <Route path="/about" element={<About />}/>
         </Routes>
       </div>
     </ThemeProvider>

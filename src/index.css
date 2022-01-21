@@ -6,7 +6,7 @@
 }
 
 * {
-  @apply text-white;
+  @apply text-portfolio-secondary;
   font-family: "Bebas Neue";
 }
 
@@ -43,4 +43,10 @@ body {
 /* Heading 1 */
 .heading-1 {
   @apply text-[3rem] text-portfolio-tertiary sm:text-[4rem];
+}
+
+/* Main Image */
+
+.img-main {
+  @apply h-max w-full max-w-[26rem] 2xl:max-w-[36rem];
 }

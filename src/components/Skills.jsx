@@ -30,9 +30,9 @@ function Skills() {
       <ul 
       className="grid grid-cols-2 gap-[2rem] sm:flex sm:flex-wrap sm:max-w-[30rem] sm:justify-center lg:justify-start">
           {
-              skills.map(skill => {
+              skills.map((skill, index) => {
                 return (
-                    <li className="max-w-[2rem]">
+                    <li key={index} className="max-w-[2rem]">
                         {skill}
                     </li>
                 )

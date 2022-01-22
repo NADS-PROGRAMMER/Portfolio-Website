@@ -8,18 +8,6 @@ import { motion } from 'framer-motion'
 
 function Socials({ className }) {
 
-    const socialVariants = {
-        initial: {
-            rotate: -360
-        },
-        animate: {
-            rotate: 0,
-            transition: {
-                duration: .6
-            }
-        }
-    }
-    
     const socials = [
         {logo: <Github title="github"/>, label: 'Github Account'},
         {logo: <Twitter />, label: 'Twitter Account'},
@@ -29,9 +17,9 @@ function Socials({ className }) {
     return (
         <ul  className={className}>
               {
-                  socials.map(social => {
+                  socials.map((social, index) => {
                       return (
-                          <motion.li variants={socialVariants} className="social w-[1.5rem]">
+                          <motion.li key={index} className="social w-[1.5rem]">
                               <a aria-label={social.label} href="">
                                   {social.logo}
                               </a>

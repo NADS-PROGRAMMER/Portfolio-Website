@@ -1,11 +1,11 @@
 import Navbar from './components/Navbar'
-
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import {BrowserRouter, Routes, Route } from 'react-router-dom'
-
+import { createTheme, ThemeProvider } from '@mui/material/styles'
+import { Routes, Route, useLocation } from 'react-router-dom'
 // Pages
 import Home from './Pages/Home'
 import About from './Pages/About'
+
+import { AnimatePresence } from 'framer-motion'
 
 const myTheme = createTheme({
   palette: {
@@ -20,14 +20,18 @@ const myTheme = createTheme({
 
 function App() {
 
+  let location = useLocation()
+  
   return (
     <ThemeProvider theme={myTheme}>
       <div className="flex flex-col">
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} /> 
-          <Route path="/about" element={<About />}/>
-        </Routes>
+        <AnimatePresence>
+          <Routes location={location} key={location.key}>
+            <Route exact path="/" element={<Home />} /> 
+            <Route exact path="/about" element={<About />}/>
+          </Routes>
+        </AnimatePresence>
       </div>
     </ThemeProvider>
     

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 import NavLink  from '../base-components/NavLink'
 import Button from '@mui/material/Button';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -9,11 +10,13 @@ function Navbar() {
 
     const matches = useMediaQuery('(min-width:768px)');
 
+    const location = useLocation()
+    
     const NavLinks = [
-        {link: <NavLink className="nav-links link-hover" routePath="/" text="Home"/>},
-        {link: <NavLink className="nav-links link-hover" routePath="/about" text="About"/>},
-        {link: <NavLink className="nav-links link-hover" routePath="/projects" text="Projects"/>},
-        {link: <NavLink className="nav-links link-hover" routePath="/blogs" text="Blogs"/>},
+        {link: <NavLink className="nav-links" routePath={location.pathname != '/' ? '/' : ''} text="Home"/>},
+        {link: <NavLink className="nav-links" routePath="/about" text="About"/>},
+        {link: <NavLink className="nav-links" routePath="/projects" text="Projects"/>},
+        {link: <NavLink className="nav-links" routePath="/blogs" text="Blogs"/>},
     ]
     
     const navbarVariants = {
@@ -38,7 +41,7 @@ function Navbar() {
             variants={navbarVariants}
             initial="initial"
             animate="animate"
-            className="flex items-center justify-between p-[1rem] fixed top-0 w-full bg-portfolio-bg shadow-sm md:justify-around lg:p-[1rem]">
+            className="flex items-center justify-between z-[1] p-[1rem] fixed top-0 w-full bg-portfolio-bg shadow-sm md:justify-around lg:p-[1rem]">
           
             { matches && 
                 <Button
@@ -51,9 +54,11 @@ function Navbar() {
             {/* Navbar Links */}
             <ul className="hidden items-center gap-[2rem] md:flex">
                 {
-                    NavLinks.map(link => {
+                    NavLinks.map((link, index) => {
                         return (
-                            link['link']
+                            <li className="link-hover" key={index}>
+                                {link['link']}
+                            </li>
                         )
                     })
                 }

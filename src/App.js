@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { Routes, Route, useLocation } from 'react-router-dom'
+
 // Pages
 import Home from './Pages/Home'
 import About from './Pages/About'
@@ -13,7 +14,7 @@ const myTheme = createTheme({
       main: '#444CF7',
     },
     secondary: {
-      main: '#4596F9'
+      main: '#0657BA'
     }
   },
 });
@@ -23,18 +24,19 @@ function App() {
   let location = useLocation()
   
   return (
-    <ThemeProvider theme={myTheme}>
-      <div className="flex flex-col">
-        <Navbar />
-        <AnimatePresence>
-          <Routes location={location} key={location.key}>
-            <Route exact path="/" element={<Home />} /> 
-            <Route exact path="/about" element={<About />}/>
-          </Routes>
-        </AnimatePresence>
-      </div>
-    </ThemeProvider>
-    
+      <ThemeProvider theme={myTheme}>
+        <div className="flex flex-col bg-gradient-to-r from-[#ECE9E6] to-[#ffffff] dark:from-black dark:to-slate-900">
+          
+              <Navbar />
+            
+              <AnimatePresence>
+                <Routes location={location} key={location.key}>
+                  <Route exact path="/" element={<Home />} /> 
+                  <Route exact path="/about" element={<About />}/>
+                </Routes>
+              </AnimatePresence>
+        </div>
+      </ThemeProvider>
   );
 }
 

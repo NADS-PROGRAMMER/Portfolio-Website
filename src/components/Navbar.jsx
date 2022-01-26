@@ -1,50 +1,45 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import NavLink  from '../base-components/NavLink'
 import Button from '@mui/material/Button';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import MenuIcon from '@mui/icons-material/Menu';
 import { motion } from 'framer-motion'
+import LightModeIcon from '@mui/icons-material/LightMode';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 function Navbar() {
 
+    const [darkMode, setDarkMode] = useState(false)
     const matches = useMediaQuery('(min-width:768px)');
-
     const location = useLocation()
     
+    useEffect(() => {
+
+        if (darkMode) 
+            document.documentElement.classList.add('dark')
+        else
+            document.documentElement.classList.remove('dark');
+    }, [darkMode])
     const NavLinks = [
-        {link: <NavLink className="nav-links" routePath={location.pathname != '/' ? '/' : ''} text="Home"/>},
-        {link: <NavLink className="nav-links" routePath="/about" text="About"/>},
-        {link: <NavLink className="nav-links" routePath="/projects" text="Projects"/>},
-        {link: <NavLink className="nav-links" routePath="/blogs" text="Blogs"/>},
+        {link: <NavLink className="nav-links" routePath="/" text="Home"/>, path: "/"},
+        {link: <NavLink className="nav-links" routePath="/about" text="About"/>, path: "/about"},
+        {link: <NavLink className="nav-links" routePath="/projects" text="Projects"/>, path: "/projects"},
+        {link: <NavLink className="nav-links" routePath="/blogs" text="Blogs"/>, path: "/blogs"},
     ]
     
-    const navbarVariants = {
-
-        initial: {
-            opacity: 0,
-            y: '-100%'
-        },
-        animate: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                type: 'spring',
-                duration: 1,
-                stiffness: '100',
-            }
-        }
-    }
-
     return (
         <motion.nav 
-            variants={navbarVariants}
-            initial="initial"
-            animate="animate"
-            className="flex items-center justify-between z-[1] p-[1rem] fixed top-0 w-full bg-portfolio-bg shadow-sm md:justify-around lg:p-[1rem]">
+            aria-label='primary'
+            className="flex items-center justify-between z-[1] px-[1rem] fixed top-0 w-full bg-portfolio-bg shadow-sm md:justify-around dark:bg-slate-900">
           
             { matches && 
                 <Button
+                    sx={{
+                        '$:focus': {
+                            border: '24px solid red'
+                        }
+                    }}
                     color="secondary"
                     variant="contained">
                     Contact Me
@@ -52,23 +47,46 @@ function Navbar() {
             }
 
             {/* Navbar Links */}
-            <ul className="hidden items-center gap-[2rem] md:flex">
+            <ul className="hidden items-center gap-[2rem] md:flex self-stretch">
                 {
                     NavLinks.map((link, index) => {
                         return (
-                            <li className="link-hover" key={index}>
+                            <motion.li           
+                                className="h-full flex items-center relative" key={index}>
                                 {link['link']}
-                            </li>
+                                {
+                                /** Adding a layoutId lets the motion give it an animation. */
+                                location.pathname == link.path &&
+                                    <motion.div layoutId="nav-link" className="h-[.2rem] absolute bg-portfolio-tertiary left-0 right-0 bottom-0 dark:bg-orange-100"></motion.div> 
+                                }
+                            </motion.li>
                         )
                     })
                 }
             </ul>
-
-            <span className="text-portfolio-secondary text-xl">Nads Marcelo</span>
             
-            {/* Hamburger Icon */}
+            <section className="flex items-center gap-[1.5rem] md:flex-row-reverse">
+                 {/* Light and Dark Icon */}
+                 <button 
+                      aria-label="Dark Mode"
+                      onClick={() => { 
+                        setDarkMode(!darkMode)
+                      }}>
+                      <svg  className="svg-primary block h-[2rem] w-[2rem]">
+                        { darkMode ? <LightModeIcon fontSize="medium"/> : <DarkModeIcon /> }
+                      </svg>
+                 </button>
+              
+                <span className="text-portfolio-tertiary text-xl py-[1rem] dark:text-slate-100">Nads Marcelo</span>
+            </section>
+            
+            
+            {/* Hamburger Icon
+                
+                ONLY show on mobile screen devices.
+            */}
             <svg className="svg-primary block h-[2rem] w-[2rem] ml-auto md:hidden">
-                <MenuIcon  text="primary"/>
+                <MenuIcon />
             </svg>
         </motion.nav>
     )

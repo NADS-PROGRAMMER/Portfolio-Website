@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '@mui/material/Button'
-import { ReactComponent as AboutLogo } from '../assets/logos/AboutLogo.svg'
+import { ReactComponent as AboutPhoto } from '../assets/logos/AboutLogo.svg'
+import AboutSection from '../components/AboutSection'
 import Skills from '../components/Skills'
 import Education from '../components/Education'
 import Certificates from '../components/Certificates'
@@ -9,7 +10,20 @@ import { motion } from 'framer-motion'
 
 function About() {
 
-  /** Each section must be in a seperate file */
+  const sections = [
+      {
+          section: <Skills />,
+          name: 'Skills'
+      },
+      {
+          section: <Education />,
+          name: 'Education'
+      },
+      {
+          section: <Certificates />,
+          name: 'Certificates'
+      },
+  ]
   return (
       <motion.main className="main-about">
 
@@ -18,9 +32,10 @@ function About() {
             className="heading-1 lg:hidden">
                 About
           </motion.h1>
-
-          <motion.section>
-              <AboutLogo className="img-main p-[1rem] lg:max-w-[26rem] lg:sticky lg:top-[5rem] mx-auto"/>
+          
+          {/* Photo */}
+          <motion.section aria-label="Photo of Adrian Nads" className="lg:sticky lg:top-[5rem]">
+              <AboutPhoto className="img-main p-[1rem] lg:max-w-[26rem]  mx-auto"/>
           </motion.section>
           
           <motion.div  className="flex flex-col">
@@ -58,29 +73,18 @@ function About() {
                         </Button> 
                     </motion.div>
 
-                    {/* Skills */}
-                    <motion.div className="flex flex-col items-center gap-[1rem] lg:items-start">
-                        <h2 className="heading-2">
-                            Skills
-                        </h2>
-                        <Skills />
-                    </motion.div>
-
-                    {/* Education */}
-                    <motion.div  className="flex flex-col items-center gap-[1rem] lg:items-start">
-                        <h2 className="heading-2">Education</h2>
-                        <Education />
-                    </motion.div>
-                  
-                    {/* Certificates */}
-                    <motion.div className="flex flex-col items-center gap-[1rem] lg:items-start">
-                        <h2 className="heading-2">Certificates</h2>
-                        <Certificates />
-                    </motion.div>
+                    {/* Loop through all of the SECTION */}
+                    {
+                        sections.map((section, index) => {
+                            return (
+                                <AboutSection key={index} sectionName={section.name}>
+                                    {section['section']}
+                                </AboutSection>
+                            )
+                        })
+                    }
                 </div>
           </motion.div>
-         
-         
       </motion.main>
   )
 }

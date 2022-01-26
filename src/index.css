@@ -16,16 +16,16 @@ body {
 
 /* Heading 1 */
 .heading-1 {
-  @apply text-[3rem] text-portfolio-tertiary sm:text-[4rem];
+  @apply text-[3rem] text-portfolio-secondary sm:text-[4rem] dark:text-slate-200;
 }
 
 /* Heading 2 */
 .heading-2 {
-  @apply text-3xl text-portfolio-tertiary relative after:absolute after:block after:w-full after:bottom-0 after:h-[.2rem] after:bg-portfolio-tertiary after:content-[''];
+  @apply text-3xl text-portfolio-secondary relative after:absolute after:block after:w-full after:bottom-0 after:h-[.2rem] after:bg-portfolio-secondary after:content-[''];
 }
 
 .svg-primary path {
-  @apply fill-portfolio-secondary;
+  @apply fill-portfolio-secondary dark:fill-slate-100;
 }
 
 .svg-secondary path {
@@ -33,20 +33,16 @@ body {
 }
 
 .social path {
-  @apply fill-portfolio-secondary;
-}
-
-.social:hover path {
-  @apply fill-portfolio-tertiary;
+  @apply fill-portfolio-secondary dark:fill-slate-100;
 }
 
 /* Navbar */
 .nav-links {
-  @apply font-[Poppins] text-portfolio-secondary hover:text-portfolio-tertiary;
+  @apply font-[Poppins] text-portfolio-tertiary dark:text-slate-200;
 }
 
 .link-hover {
-  @apply relative after:content-[''] after:bg-portfolio-tertiary after:h-[.2rem] after:absolute after:w-full after:hidden hover:after:block transition-all;
+  @apply relative after:content-[''] after:bg-portfolio-tertiary after:h-[.2rem] after:absolute after:w-full after:block transition-all;
 }
 
 /* Home (main tag) styles */

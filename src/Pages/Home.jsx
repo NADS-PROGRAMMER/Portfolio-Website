@@ -16,7 +16,7 @@ function Home() {
                 className="order-2 flex flex-col items-center md:order-1 md:items-start ">
 
                 <motion.span
-                    className="text-[1.5rem] font-[Poppins] text-center text-portfolio-tertiary font-normal max-w-[23ch] sm:text-[2rem] md:text-left">
+                    className="text-[1.5rem] font-[Poppins] text-center text-portfolio-tertiary font-normal max-w-[23ch] sm:text-[2rem] md:text-left dark:text-orange-100">
                     Hello there! I'm Nads from the Philippines
                 </motion.span>
 

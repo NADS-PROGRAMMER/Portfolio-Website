@@ -5,11 +5,13 @@ import AboutSection from '../components/AboutSection'
 import Skills from '../components/Skills'
 import Education from '../components/Education'
 import Certificates from '../components/Certificates'
+import { motion, AnimatePresence } from 'framer-motion'
 
-import { motion } from 'framer-motion'
-
+/**
+ * It is the About Page. */
 function About() {
-
+  
+  /** All of the sections in About page. */   
   const sections = [
       {
           section: <Skills />,
@@ -24,7 +26,10 @@ function About() {
           name: 'Certificates'
       },
   ]
+
   return (
+
+    <AnimatePresence>
       <motion.main className="main-about">
 
           {/* About (Text) */}
@@ -39,29 +44,35 @@ function About() {
           </motion.section>
           
           <motion.div  className="flex flex-col">
+              
             <motion.h1 className="hidden heading-1 lg:block text-left">About</motion.h1>
 
              <div className="flex flex-col items-center gap-[3rem] lg:items-start">
               
                     {/* Brief Intro */}
                     <motion.div className="text-center flex flex-col items-center gap-[.5rem] lg:items-start lg:text-left">
+
+                        {/* Adrian Nads Marcelo / Web Developer */}
                         <section>
                             <h2 
-                                className="font-[Poppins] font-medium text-3xl">
+                                className="font-[Poppins] font-medium text-3xl dark:text-slate-100">
                                 Adrian Nads L. Marcelo
                             </h2>
                             <span 
-                                className="font-[Poppins] text-xl text-portfolio-tertiary font-medium">
+                                className="font-[Poppins] text-xl text-portfolio-tertiary font-medium dark:text-orange-100">
                                 Web Developer
                             </span>
                         </section>
                         
-                        <p className="font-[Poppins] md:max-w-[55ch]">
+                        {/* Introduction */}
+                        <p className="font-[Poppins] md:max-w-[55ch] dark:text-slate-100">
                             I'm a passionate Web Developer from the Philippines. I'm currently
                             in my 3rd-year taking BS Computer Science. I always love creating
                             projects to showcase what I am currently learned. Another is that
                             I always documenting my journey through writing blogs.
                         </p>
+
+                        {/* Resume Button */}
                         <Button
                             size="large"
                             sx={{
@@ -83,9 +94,11 @@ function About() {
                             )
                         })
                     }
+
                 </div>
           </motion.div>
       </motion.main>
+      </AnimatePresence>
   )
 }
 

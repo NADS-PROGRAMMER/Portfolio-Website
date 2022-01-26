@@ -22,9 +22,9 @@ function Education() {
             educationsInfo.map((education, index) => {
                 return (
                     <section key={index} className="text-center flex flex-col items-center lg:text-left lg:items-start">
-                        <h3 className="text-2xl text-portfolio-secondary font-medium tracking-[.2rem]">{education.course}</h3>
-                        <p className="text-lg font-[Poppins] font-medium text-portfolio-tertiary">{education.school}</p>
-                        <span className="font-[Poppins] italic">{education.year}</span>
+                        <h3 className="heading-3">{education.course}</h3>
+                        <p className="p-primary">{education.school}</p>
+                        <p className="p-secondary">{education.year}</p>
                     </section>
                 )
             })        

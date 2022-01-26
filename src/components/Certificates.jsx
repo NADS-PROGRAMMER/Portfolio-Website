@@ -24,14 +24,14 @@ function Certificates() {
                         <section 
                             key={index} 
                             className="text-center flex flex-col items-center lg:text-left lg:items-start">
-                            <h3 className="text-2xl font-medium text-portfolio-secondary tracking-[.2rem]">
+                            <h3 className="heading-3">
 
                                 {certificate.certificate}
                             </h3>
-                            <p className="text-lg font-[Poppins] font-medium text-portfolio-tertiary">
+                            <p className="p-primary">
                                 {certificate.date}
                             </p>
-                            <p className="font-[Poppins] italic">
+                            <p className="p-secondary">
                                 By {certificate.givenBy}
                             </p>
                         </section>

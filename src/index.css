@@ -21,11 +21,26 @@ body {
 
 /* Heading 2 */
 .heading-2 {
-  @apply text-3xl text-portfolio-secondary relative after:absolute after:block after:w-full after:bottom-0 after:h-[.2rem] after:bg-portfolio-secondary after:content-[''];
+  @apply text-3xl text-portfolio-secondary relative after:absolute after:block after:w-full after:bottom-0 after:h-[.2rem] after:bg-portfolio-secondary after:content-[''] dark:text-slate-100 dark:after:bg-slate-100;
+}
+
+/* Heading 3 */
+.heading-3 {
+  @apply text-2xl text-portfolio-secondary font-medium tracking-[.2rem] dark:text-slate-100;
+}
+
+/* Paragraph primary */
+.p-primary {
+  @apply text-lg font-[Poppins] font-medium text-portfolio-tertiary dark:text-orange-100;
+}
+
+/* Paragraph secondary */
+.p-secondary {
+  @apply font-[Poppins] italic text-portfolio-tertiary dark:text-orange-50;
 }
 
 .svg-primary path {
-  @apply fill-portfolio-secondary dark:fill-slate-100;
+  @apply fill-portfolio-tertiary dark:fill-slate-100;
 }
 
 .svg-secondary path {

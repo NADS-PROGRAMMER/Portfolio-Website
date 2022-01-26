@@ -4,7 +4,7 @@ import NavLink  from '../base-components/NavLink'
 import Button from '@mui/material/Button';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import MenuIcon from '@mui/icons-material/Menu';
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 
@@ -72,9 +72,12 @@ function Navbar() {
                       onClick={() => { 
                         setDarkMode(!darkMode)
                       }}>
-                      <svg  className="svg-primary block h-[2rem] w-[2rem]">
-                        { darkMode ? <LightModeIcon fontSize="medium"/> : <DarkModeIcon /> }
-                      </svg>
+                        
+                    <AnimatePresence>
+                        <motion.svg  className="svg-primary block h-[2rem] w-[2rem]">
+                            { darkMode ? <LightModeIcon fontSize="medium"/> : <DarkModeIcon /> }
+                        </motion.svg>
+                      </AnimatePresence>
                  </button>
               
                 <span className="text-portfolio-tertiary text-xl py-[1rem] dark:text-slate-100">Nads Marcelo</span>

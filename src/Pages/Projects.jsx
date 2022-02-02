@@ -9,6 +9,9 @@ import BaseApparel from '.././projects-photos/base-apparel-page.png'
 
 function Projects() {
 
+  /** == My Projects ==
+   * 
+   * Each object consist of the image and project title. */
   const projects = [
 
     {
@@ -32,13 +35,15 @@ function Projects() {
   return (
       <main className="min-h-screen p-[5rem_1rem] flex flex-col items-center gap-[1.5rem]">
 
+          {/* Title */}
           <h1 className="heading-1">Projects</h1>
 
+          {/* Projects Container */}
           <div className="flex flex-col items-center gap-[3rem] md:flex-row md:flex-wrap md:justify-center">
             {
-                projects.map(project => {
+                projects.map((project, index) => {
                     return (
-                        <Project props={project}/>
+                        <Project key={index} props={project}/>
                     )
                 })
             }

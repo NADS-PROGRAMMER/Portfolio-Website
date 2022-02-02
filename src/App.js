@@ -8,6 +8,7 @@ import About from './Pages/About'
 import Projects from './Pages/Projects';
 import { AnimatePresence } from 'framer-motion'
 
+// Theme for the Material UI
 const myTheme = createTheme({
   palette: {
     primary: {

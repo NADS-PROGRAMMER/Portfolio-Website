@@ -2,6 +2,7 @@ import React from 'react';
 
 function Education() {
 
+  /** == List of Educations == */
   const educationsInfo = [
       {
           course: 'Bachelor of Science in Computer Science',

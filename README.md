@@ -1,7 +1,26 @@
 # My Second Portfolio Website
 
-I decided to create a new portfolio since the first one is outdated and hard to maintain. I also planning to use email integration to this project.
-  
+
+## File Structure
+------ 
+
+**SOURCE**
+ - assets
+    - logos
+    - skills
+    - socials
+ - base-components
+ - components
+ - contexts
+ - pages
+ - project-photos
+ - variants
+
 ## Progress
-- Home page and About page transitions and animations.
-- 
+
+Already done for Home, About, and Projects section
+
+## On-Going
+
+- Blogs section and need to fetch from Hashnode API.
+- Need to learn GraphQL

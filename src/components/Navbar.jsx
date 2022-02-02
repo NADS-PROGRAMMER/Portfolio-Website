@@ -14,6 +14,13 @@ function Navbar() {
     const matches = useMediaQuery('(min-width:768px)');
     const location = useLocation()
     
+    const NavLinks = [
+        {link: <NavLink className="nav-links" routePath="/" text="Home"/>, path: "/"},
+        {link: <NavLink className="nav-links" routePath="/about" text="About"/>, path: "/about"},
+        {link: <NavLink className="nav-links" routePath="/projects" text="Projects"/>, path: "/projects"},
+        {link: <NavLink className="nav-links" routePath="/blogs" text="Blogs"/>, path: "/blogs"},
+    ]
+
     useEffect(() => {
 
         if (darkMode) 
@@ -21,12 +28,6 @@ function Navbar() {
         else
             document.documentElement.classList.remove('dark');
     }, [darkMode])
-    const NavLinks = [
-        {link: <NavLink className="nav-links" routePath="/" text="Home"/>, path: "/"},
-        {link: <NavLink className="nav-links" routePath="/about" text="About"/>, path: "/about"},
-        {link: <NavLink className="nav-links" routePath="/projects" text="Projects"/>, path: "/projects"},
-        {link: <NavLink className="nav-links" routePath="/blogs" text="Blogs"/>, path: "/blogs"},
-    ]
     
     return (
         <motion.nav 
@@ -55,7 +56,9 @@ function Navbar() {
                                 className="h-full flex items-center relative" key={index}>
                                 {link['link']}
                                 {
-                                /** Adding a layoutId lets the motion give it an animation. */
+                                /** Adding a layoutId lets the motion give it an animation.
+                                 * 
+                                 * This is the line under the nav link. */
                                 location.pathname == link.path &&
                                     <motion.div layoutId="nav-link" className="h-[.2rem] absolute bg-portfolio-tertiary left-0 right-0 bottom-0 dark:bg-orange-100"></motion.div> 
                                 }

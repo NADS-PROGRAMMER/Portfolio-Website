@@ -5,7 +5,7 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 // Pages
 import Home from './Pages/Home'
 import About from './Pages/About'
-
+import Projects from './Pages/Projects';
 import { AnimatePresence } from 'framer-motion'
 
 const myTheme = createTheme({
@@ -33,6 +33,7 @@ function App() {
                 <Routes location={location} key={location.key}>
                   <Route exact path="/" element={<Home />} /> 
                   <Route exact path="/about" element={<About />}/>
+                  <Route exact path="/projects" element={<Projects />}/>
                 </Routes>
               </AnimatePresence>
         </div>

@@ -1,3 +1,4 @@
+// Imports
 import React, { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import NavLink  from '../base-components/NavLink'
@@ -10,9 +11,10 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 function Navbar() {
 
-    const [darkMode, setDarkMode] = useState(false)
+    // By default, the darkmode is on.
+    const [darkMode, setDarkMode] = useState(true);
     const matches = useMediaQuery('(min-width:768px)');
-    const location = useLocation()
+    const location = useLocation(); // check the current location of the page which gets the url.
     
     const NavLinks = [
         {link: <NavLink className="nav-links" routePath="/" text="Home"/>, path: "/"},

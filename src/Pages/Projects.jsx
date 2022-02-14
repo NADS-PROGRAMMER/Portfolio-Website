@@ -33,13 +33,14 @@ function Projects() {
   ]
 
   return (
-      <main className="min-h-screen p-[5rem_1rem] flex flex-col items-center gap-[1.5rem]">
+      <main className="min-h-screen p-[5rem_1.5rem] flex flex-col items-center gap-[1.5rem]">
 
           {/* Title */}
           <h1 className="heading-1">Projects</h1>
 
           {/* Projects Container */}
-          <div className="flex flex-col items-center gap-[3rem] md:flex-row md:flex-wrap md:justify-center">
+          {/* flex flex-col items-center gap-[3rem] md:flex-row md:flex-wrap md:justify-center */}
+          <div className="flex flex-col items-center gap-[3rem] md:flex-row md:flex-wrap md:justify-center 2xl:grid 2xl:grid-cols-3 2xl:gap-[3rem]">
             {
                 projects.map((project, index) => {
                     return (

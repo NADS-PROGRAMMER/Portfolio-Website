@@ -13,9 +13,23 @@ import { motion } from 'framer-motion'
  */
 function AboutSection({ children, sectionName}) {
 
+  const childVariant = {
+    initial: {
+        opacity: 0,
+        y: '50%'
+    },
+    animate: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            staggerChildren: 0.2,
+        }
+    }
+  }
+
   return (
 
-    <motion.div className="flex flex-col items-center gap-[1rem] lg:items-start">
+    <motion.div variants={childVariant} className="flex flex-col items-center gap-[1rem] lg:items-start">
         <h2 className="heading-2">
             { sectionName }
         </h2>

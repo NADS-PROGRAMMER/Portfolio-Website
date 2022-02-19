@@ -1,10 +1,12 @@
 import React from 'react'
 import Button from '@mui/material/Button';
+import { motion } from 'framer-motion'
+import Variants from '../variants/Variants'
 
 function Project({ props }) {
 
   return (
-      <section className="flex flex-col items-start gap-[1rem] w-full md:w-max ">
+      <motion.section variants={Variants.childVariant} className="flex flex-col items-start gap-[1rem] w-full md:w-max ">
 
         {/* Project Image */}
         <section 
@@ -35,7 +37,7 @@ function Project({ props }) {
             </Button>
         </section>
         
-      </section>
+      </motion.section>
   );
 }
 

@@ -30,7 +30,7 @@ function App() {
           
               <Navbar />
             
-              <AnimatePresence>
+              <AnimatePresence exitBeforeEnter>
                 <Routes location={location} key={location.key}>
                   <Route exact path="/" element={<Home />} /> 
                   <Route exact path="/about" element={<About />}/>

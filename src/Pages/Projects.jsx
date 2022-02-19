@@ -7,6 +7,9 @@ import RecipeApp from '.././projects-photos/recipe-search-app.png'
 import TipCalculator from '.././projects-photos/tip-calculator.png'
 import BaseApparel from '.././projects-photos/base-apparel-page.png'
 
+import { motion } from 'framer-motion'
+import Variants from '../variants/Variants'
+
 function Projects() {
 
   /** == My Projects ==
@@ -33,14 +36,14 @@ function Projects() {
   ]
 
   return (
-      <main className="min-h-screen p-[5rem_1.5rem] flex flex-col items-center gap-[1.5rem]">
+      <motion.main variants={Variants.projectVariant} initial="initial" animate="animate" className="min-h-screen p-[5rem_1.5rem] flex flex-col items-center gap-[1.5rem]">
 
           {/* Title */}
-          <h1 className="heading-1">Projects</h1>
+          <motion.h1 variants={Variants.childVariant} className="heading-1">Projects</motion.h1>
 
           {/* Projects Container */}
           {/* flex flex-col items-center gap-[3rem] md:flex-row md:flex-wrap md:justify-center */}
-          <div className="flex flex-col items-center gap-[3rem] md:flex-row md:flex-wrap md:justify-center 2xl:grid 2xl:grid-cols-3 2xl:gap-[3rem]">
+          <motion.div variants={Variants.projectVariant} initial="initial" animate="animate" className="flex flex-col items-center gap-[3rem] md:flex-row md:flex-wrap md:justify-center 2xl:grid 2xl:grid-cols-3 2xl:gap-[3rem]">
             {
                 projects.map((project, index) => {
                     return (
@@ -48,8 +51,8 @@ function Projects() {
                     )
                 })
             }
-          </div>
-      </main>
+          </motion.div>
+      </motion.main>
   )
 }
 

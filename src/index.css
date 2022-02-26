@@ -16,7 +16,7 @@ body {
 
 /* Heading 1 */
 .heading-1 {
-  @apply text-[3rem] text-portfolio-secondary sm:text-[4rem] dark:text-slate-200;
+  @apply text-[3rem] text-portfolio-secondary sm:text-[4rem] text-center dark:text-slate-200;
 }
 
 /* Heading 2 */

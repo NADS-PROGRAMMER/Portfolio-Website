@@ -18,7 +18,7 @@ function Skills() {
     <CSS className="fill-[#1572B6]"/>,
     <JavaScript className="fill-[#F7DF1E]"/>,
     <MongoDB className="fill-[#47A248]"/>,
-    <Express className="fill-[#000000]"/>,
+    <Express className="fill-[#000000] dark:fill-white"/>,
     <ReactLogo className="fill-[#61DAFB]"/>,
     <NodeJS className="fill-[#339933]"/>,
     <Sass className="fill-[#CC6699]"/>,

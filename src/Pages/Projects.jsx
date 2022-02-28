@@ -19,19 +19,23 @@ function Projects() {
 
     {
         projectImage: Flashcards,
-        projectTitle: 'Flashcards'
+        projectTitle: 'Flashcards',
+        projectLink: 'https://flashcards-go.netlify.app/'
     },
     {
         projectImage: RecipeApp,
-        projectTitle: 'Recipe Search App'
+        projectTitle: 'Recipe Search App',
+        projectLink: 'https://adriandev-search-recipe.netlify.app/'
     },
     {
         projectImage: TipCalculator,
-        projectTitle: 'Tip Calculator'
+        projectTitle: 'Tip Calculator',
+        projectLink: 'https://adriandev-tip-calculator.netlify.app/'
     },
     {
         projectImage: BaseApparel,
-        projectTitle: 'Base Apparel Page'
+        projectTitle: 'Base Apparel Page',
+        projectLink: 'https://nads-programmer.github.io/NADS-PROGRAMMER-base-apparel-design/'
     },
   ]
 

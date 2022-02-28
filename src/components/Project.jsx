@@ -17,8 +17,8 @@ function Project({ props }) {
           alt="" />
 
           <button 
-          className="bg-slate-900 p-[1rem] invisible group-hover:visible rounded-full text-2xl text-white transition-[visibility_300ms,opacity_300ms,transform_300ms] opacity-0 group-hover:opacity-100 absolute top-1/2 left-1/2 transform -translate-x-1/2 group-hover:-translate-y-1/2">
-            View
+          className="bg-portfolio-secondary dark:bg-slate-900 p-[1rem] invisible group-hover:visible rounded-full text-2xl text-white transition-[visibility_300ms,opacity_300ms,transform_300ms] opacity-0 group-hover:opacity-100 absolute top-1/2 left-1/2 transform -translate-x-1/2 group-hover:-translate-y-1/2">
+            <a href={props.projectLink} target="_blank">View</a>
           </button>
         </section>
         

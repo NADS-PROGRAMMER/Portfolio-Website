@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500&display=swap");
 
 :root {
 }
@@ -16,12 +17,12 @@ body {
 
 /* Heading 1 */
 .heading-1 {
-  @apply text-[3rem] text-portfolio-secondary sm:text-[4rem] text-center dark:text-slate-200;
+  @apply text-[3rem] text-portfolio-secondary sm:text-[4rem] dark:text-slate-200;
 }
 
 /* Heading 2 */
 .heading-2 {
-  @apply text-3xl text-portfolio-secondary relative after:absolute after:block after:w-full after:bottom-0 after:h-[.2rem] after:bg-portfolio-secondary after:content-[''] dark:text-slate-100 dark:after:bg-slate-100;
+  @apply text-3xl font-['Alegreya_Sans_SC'] text-portfolio-secondary relative after:absolute after:block after:w-full after:bottom-0 after:h-[.2rem] after:bg-portfolio-secondary after:content-[''] dark:text-slate-100 dark:after:bg-slate-100;
 }
 
 /* Heading 3 */

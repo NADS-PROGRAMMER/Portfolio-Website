@@ -20,7 +20,7 @@ function Navbar() {
         {link: <NavLink className="nav-links" routePath="/" text="Home"/>, path: "/"},
         {link: <NavLink className="nav-links" routePath="/about" text="About"/>, path: "/about"},
         {link: <NavLink className="nav-links" routePath="/projects" text="Projects"/>, path: "/projects"},
-        {link: <NavLink className="nav-links" routePath="/blogs" text="Blogs"/>, path: "/blogs"},
+        // {link: <NavLink className="nav-links" routePath="/blogs" text="Blogs"/>, path: "/blogs"},
     ]
 
     useEffect(() => {
@@ -85,7 +85,7 @@ function Navbar() {
                       </AnimatePresence>
                  </button>
               
-                <span className="text-portfolio-tertiary text-xl py-[1rem] dark:text-slate-100">Nads Marcelo</span>
+                <span className="text-portfolio-tertiary text-xl py-[1rem] font-['Alegreya_Sans_SC'] dark:text-slate-100">Nads Marcelo</span>
             </section>
             
             

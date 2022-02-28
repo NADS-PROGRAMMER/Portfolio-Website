@@ -13,7 +13,7 @@ export default {
     // About Page Variant
     aboutVariant: {
         initial: {
-            opacity: 0
+            opacity: 0,
         },
         animate: {
             opacity: 1,
